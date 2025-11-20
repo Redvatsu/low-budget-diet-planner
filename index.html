@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Low Budget Diet Planner — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="stylealt.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header container" role="banner">
+    <div class="brand" aria-hidden="false">
+      <div class="logo-badge" aria-hidden="true">LB</div>
+      <div>
+        <h1 class="brand-title">Low Budget Diet Planner</h1>
+        <div class="kicker">Eat smart. Spend less. Feel better.</div>
+      </div>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="planner.html">Planner</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="tips.html">Tips</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+
+    <!-- Meal Roulette -->
+    <section class="hero-card card" aria-labelledby="rouletteTitle">
+      <h2 id="rouletteTitle" class="mega-title">Meal Roulette — Generate a Low-Cost Meal Day</h2>
+      <p class="hint">Click <strong>Spin the Plate</strong> to instantly build a day of affordable meals.</p>
+
+      <div class="spin-large">
+        <button id="spinBtn" class="btn" type="button" aria-controls="roulettePreview" aria-label="Spin the Plate">🎲 Spin the Plate</button>
+      </div>
+
+      <div id="roulettePreview" class="roulette-preview card" aria-live="polite" role="status">
+        <div class="hint">No day generated yet. Click <strong>Spin the Plate</strong>.</div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Weekly Plan -->
+    <section class="card" aria-labelledby="weeklyTitle">
+      <h3 id="weeklyTitle">Sample 7-Day Budget Meal Plan</h3>
+      <div class="table-wrap" role="table" aria-label="Weekly meal plan table">
+        <table>
+          <caption>Weekly Meal Plan — approximate price & calories per meal</caption>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Breakfast (₹ / kcal)</th>
+              <th scope="col">Lunch (₹ / kcal)</th>
+              <th scope="col">Dinner (₹ / kcal)</th>
+              <th scope="col">Snack (₹ / kcal)</th>
+              <th scope="col">Daily Total (₹ / kcal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Poha — ₹20 / 250</td>
+              <td>Rice + Dal + Sabzi — ₹40 / 650</td>
+              <td>Chapati (2) + Mixed veg — ₹35 / 520</td>
+              <td>Banana — ₹6 / 100</td>
+              <td>₹101 / 1520 kcal</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>Oats porridge — ₹18 / 300</td>
+              <td>Khichdi (bowl) — ₹30 / 550</td>
+              <td>Rice + Lentil curry — ₹38 / 620</td>
+              <td>Roasted peanuts — ₹10 / 120</td>
+              <td>₹96 / 1590 kcal</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Vegetable Upma — ₹22 / 280</td>
+              <td>Chapati (2) + Chole — ₹35 / 600</td>
+              <td>Vegetable Pulao (small) — ₹45 / 650</td>
+              <td>Curd (small) — ₹12 / 80</td>
+              <td>₹114 / 1610 kcal</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>2 Boiled Eggs + Toast — ₹22 / 260</td>
+              <td>Rice + Dal + Sabzi — ₹40 / 650</td>
+              <td>Chapati (2) + Sabzi — ₹35 / 520</td>
+              <td>Fruit (apple / banana) — ₹10 / 90</td>
+              <td>₹107 / 1520 kcal</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>Besan cheela — ₹25 / 280</td>
+              <td>Khichdi + Curd — ₹32 / 560</td>
+              <td>Vegetable curry + Chapati — ₹35 / 520</td>
+              <td>Roasted chana — ₹8 / 100</td>
+              <td>₹100 / 1460 kcal</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>Oats + Peanut butter (small) — ₹25 / 320</td>
+              <td>Rice + Mixed dal — ₹38 / 600</td>
+              <td>Simple pulao + Salad — ₹40 / 630</td>
+              <td>Buttermilk / Lassi (small) — ₹12 / 80</td>
+              <td>₹115 / 1630 kcal</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>Poha + Tea — ₹22 / 250</td>
+              <td>Chapati + Rajma — ₹40 / 650</td>
+              <td>Light khichdi + Veg — ₹30 / 520</td>
+              <td>Seasonal fruit — ₹8 / 90</td>
+              <td>₹100 / 1510 kcal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">Notes: Prices and calories are approximate and meant as a guideline. Adjust portions or swap items for dietary needs.</p>
+    </section>
+
+    <hr>
+    <div class="recepie-box">
+<h3>quick easy and healthy recepies ideas</h3>
+</div>
+    <!-- Recipe Cards -->
+   <!-- Recipes Grid — updated with your provided images -->
+<div class="recipes-grid" id="recipesGrid" role="list">
+  <!-- Poha -->
+  <article class="recipe-card" role="listitem" data-recipe="poha" tabindex="0">
+    <img src="https://t3.ftcdn.net/jpg/05/34/44/58/360_F_534445871_9WPco2S8QJADgbxXCw0tjoaIiUR06bOA.jpg" alt="Poha thumbnail">
+    <div class="card-content">
+      <h4>Poha</h4>
+      <div class="meta"><span class="price-tag">₹20</span><span class="kcal">250 kcal</span></div>
+      <p class="small">Light, filling breakfast made with flattened rice, peanuts, and veggies.</p>
+    </div>
+    <div class="card-actions">
+      <button class="btn small view-btn" type="button" data-recipe="poha">View</button>
+    </div>
+  </article>
+
+  <!-- Khichdi -->
+ <article class="recipe-card" role="listitem" data-recipe="khichdi" tabindex="0">
+  <img src="https://www.indianveggiedelight.com/wp-content/uploads/2024/01/oats-khichdi.jpg" alt="Khichdi thumbnail">
+  <div class="card-content">
+    <h4>Khichdi</h4>
+    <div class="meta"><span class="price-tag">₹30</span><span class="kcal">550 kcal</span></div>
+    <p class="small">Comforting one-pot oats khichdi — rice + lentils alternative, bulk-friendly and healthy.</p>
+  </div>
+  <div class="card-actions">
+    <button class="btn small view-btn" type="button" data-recipe="khichdi">View</button>
+  </div>
+</article>
+
+  <!-- Besan Cheela -->
+  <article class="recipe-card" role="listitem" data-recipe="cheela" tabindex="0">
+    <img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/2ed0dfd21d445caddf356bee7715dba6.jpg?h=c6980913&itok=OWniYF2R" alt="Besan Cheela thumbnail">
+    <div class="card-content">
+      <h4>Besan Cheela</h4>
+      <div class="meta"><span class="price-tag">₹25</span><span class="kcal">280 kcal</span></div>
+      <p class="small">Savory gram-flour pancakes — quick, high-protein, and cheap.</p>
+    </div>
+    <div class="card-actions">
+      <button class="btn small view-btn" type="button" data-recipe="cheela">View</button>
+    </div>
+  </article>
+
+  <!-- Sprouts Salad -->
+  <article class="recipe-card" role="listitem" data-recipe="sprouts" tabindex="0">
+    <img src="https://pipingpotcurry.com/wp-content/uploads/2021/06/Sprouted-Bean-Salad-PipingPotCurry.jpg" alt="Sprouts Salad thumbnail">
+    <div class="card-content">
+      <h4>Sprouts Salad</h4>
+      <div class="meta"><span class="price-tag">₹12</span><span class="kcal">120 kcal</span></div>
+      <p class="small">Soaked sprouts with tomato, onion, lemon — quick and nutrient-dense.</p>
+    </div>
+    <div class="card-actions">
+      <button class="btn small view-btn" type="button" data-recipe="sprouts">View</button>
+    </div>
+  </article>
+</div>
+
+    <hr>
+
+    <!-- Focused dialog used by roulette and recipe View -->
+    <dialog id="focusDialog" aria-labelledby="focusTitle">
+      <h3 id="focusTitle">Details</h3>
+      <div id="focusContent" style="white-space: pre-wrap;"></div>
+      <div style="margin-top:0.8rem;">
+        <button id="closeFocus" class="btn small" type="button">Close</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 HealthyTech Creators — Low Budget Diet Planner. Sample data fictional.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    /* --- Food database and helper functions --- */
+    const foods = {
+      breakfast: [
+        { name: "Poha (1 plate)", price: 20, calories: 250 },
+        { name: "Oats porridge", price: 18, calories: 300 },
+        { name: "2 Boiled eggs + toast", price: 22, calories: 260 },
+        { name: "Vegetable upma", price: 22, calories: 280 },
+        { name: "Besan cheela", price: 25, calories: 280 }
+      ],
+      lunch: [
+        { name: "Rice + Dal + Sabzi", price: 40, calories: 650 },
+        { name: "Chapati (2) + Veg curry", price: 35, calories: 600 },
+        { name: "Khichdi (1 bowl)", price: 30, calories: 550 },
+        { name: "Chapati + Rajma", price: 40, calories: 650 }
+      ],
+      dinner: [
+        { name: "Chapati + Mixed veg", price: 35, calories: 520 },
+        { name: "Rice + Lentil curry", price: 38, calories: 620 },
+        { name: "Vegetable pulao (small)", price: 45, calories: 650 },
+        { name: "Light khichdi + veg", price: 30, calories: 520 }
+      ],
+      snack: [
+        { name: "Banana", price: 6, calories: 100 },
+        { name: "Roasted peanuts", price: 10, calories: 120 },
+        { name: "Curd (small)", price: 12, calories: 80 },
+        { name: "Roasted chana", price: 8, calories: 100 }
+      ]
+    };
+
+    function randomFrom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function buildDay() {
+      const b = randomFrom(foods.breakfast);
+      const l = randomFrom(foods.lunch);
+      const d = randomFrom(foods.dinner);
+      const s = randomFrom(foods.snack);
+
+      const totalCost = b.price + l.price + d.price + s.price;
+      const totalCalories = b.calories + l.calories + d.calories + s.calories;
+
+      return { breakfast: b, lunch: l, dinner: d, snack: s, totalCost, totalCalories };
+    }
+
+    /* --- Meal Roulette UI --- */
+    const spinBtn = document.getElementById('spinBtn');
+    const roulettePreview = document.getElementById('roulettePreview');
+    const focusDialog = document.getElementById('focusDialog');
+    const focusContent = document.getElementById('focusContent');
+    const closeFocus = document.getElementById('closeFocus');
+
+    spinBtn.addEventListener('click', () => {
+      const day = buildDay();
+      const lines = [
+        `Breakfast: ${day.breakfast.name} — ₹${day.breakfast.price} — ${day.breakfast.calories} kcal`,
+        `Lunch: ${day.lunch.name} — ₹${day.lunch.price} — ${day.lunch.calories} kcal`,
+        `Dinner: ${day.dinner.name} — ₹${day.dinner.price} — ${day.dinner.calories} kcal`,
+        `Snack: ${day.snack.name} — ₹${day.snack.price} — ${day.snack.calories} kcal`,
+        ``,
+        `Total Cost: ₹${day.totalCost}`,
+        `Total Calories: ${day.totalCalories} kcal`
+      ];
+
+      // Render into structured meal-line divs (using JS DOM)
+      roulettePreview.innerHTML = '';
+      lines.forEach((line, idx) => {
+        const div = document.createElement('div');
+        div.className = 'meal-line';
+        if (line === '') {
+          div.style.borderBottom = 'none';
+          roulettePreview.appendChild(div);
+          return;
+        }
+        // Split label and meta if possible
+        const sep = line.indexOf(':');
+        if (sep > 0) {
+          const label = document.createElement('span');
+          label.className = 'meal-name';
+          label.textContent = line.slice(0, sep);
+          const meta = document.createElement('span');
+          meta.className = 'meal-meta';
+          meta.textContent = line.slice(sep + 1).trim();
+          div.appendChild(label);
+          div.appendChild(meta);
+        } else {
+          div.textContent = line;
+        }
+        roulettePreview.appendChild(div);
+      });
+
+      // Focused view button
+      const btnWrap = document.createElement('div');
+      btnWrap.style.textAlign = 'right';
+      const viewBtn = document.createElement('button');
+      viewBtn.className = 'btn small';
+      viewBtn.type = 'button';
+      viewBtn.textContent = 'Focused View';
+      viewBtn.addEventListener('click', () => {
+        focusContent.textContent = lines.join('\\n');
+        if (typeof focusDialog.showModal === 'function') {
+          focusDialog.showModal();
+        } else {
+          alert(lines.join('\\n'));
+        }
+      });
+      btnWrap.appendChild(viewBtn);
+      roulettePreview.appendChild(btnWrap);
+
+      // scroll into view
+      roulettePreview.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    closeFocus.addEventListener('click', () => focusDialog.close());
+
+    /* --- Recipe View buttons (open focused dialog with recipe details) --- */
+    const recipeDetails = {
+      poha: "Poha — Quick steps:\\n1) Rinse poha. 2) Temper mustard, curry leaves, add onions & veggies. 3) Add poha, salt, turmeric. Garnish with lemon & coriander.",
+      khichdi: "Khichdi — Quick steps:\\n1) Rinse rice & lentils. 2) Add water, turmeric, salt. 3) Cook until soft. Temper with ghee and cumin.",
+      cheela: "Besan Cheela — Quick steps:\\n1) Mix besan with water to batter, add spices & veggies. 2) Cook on hot griddle with little oil.",
+      sprouts: "Sprouts Salad — Quick steps:\\n1) Soak & sprout moong. 2) Toss with onion, tomato, lemon, salt & chaat masala."
+    };
+
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const key = btn.getAttribute('data-recipe');
+        const text = recipeDetails[key] || 'Recipe not available.';
+        focusContent.textContent = text;
+        if (typeof focusDialog.showModal === 'function') {
+          focusDialog.showModal();
+        } else {
+          alert(text);
+        }
+      });
+    });
+
+    /* Accessibility: close dialog on Esc */
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && focusDialog.open) focusDialog.close();
+    });
+  </script>
+</body>
+</html>
