@@ -1,0 +1,495 @@
+/* style.css
+   "Balanced Multi-Color" theme — UPDATED to Soft Pastel Glass UI
+   - Full visual overhaul (background, cards, buttons, shadows)
+   - Keeps original classnames and layout so HTML stays the same
+   - Drop-in: replace your existing style.css with this
+*/
+
+/* ---------- Theme variables (extended) ---------- */
+:root{
+  /* Primary multi-colored palette (original names preserved) */
+  --teal: #0ea5a4;        /* primary teal */
+  --coral: #ff6b57;       /* warm coral accent */
+  --sun: #ffd166;         /* soft warm yellow */
+  --violet: #7c3aed;      /* calm violet accent */
+
+  /* New pastel accents for glass theme */
+  --pink: #ff79b0;
+  --mint: #6ef3c5;
+  --sky: #bfe9ff;
+
+  /* Neutral/background (changed to pastel gradient background) */
+  --bg-start: #fff1fb;
+  --bg-mid:   #f0f6ff;
+  --bg-end:   #eefaf1;
+  --surface: rgba(255,255,255,0.60); /* glassy card background */
+  --surface-solid: #ffffff;          /* solid surface fallback */
+  --muted: #6b7280;       /* secondary text */
+  --text: #0f172a;        /* main text (dark but not black) */
+
+  /* Shadows/borders */
+  --glass-border: rgba(15,23,42,0.06);
+  --card-border: rgba(255,255,255,0.32);
+  --shadow-sm: 0 8px 24px rgba(15,23,42,0.06);
+  --shadow-md: 0 18px 48px rgba(15,23,42,0.08);
+  --soft-shadow: 0 10px 35px rgba(11,18,32,0.06);
+
+  /* layout & sizing */
+  --max-w: 1100px;
+  --pad: 1rem;
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-sans);
+  /* NEW: pastel gradient background */
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 45%, var(--bg-end) 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.48;
+  font-size: 16px;
+  background-attachment: fixed;
+}
+
+img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+/* ---------- Layout container ---------- */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: calc(var(--pad) * 1.2);
+}
+
+/* ---------- Header / Nav (glass) ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem calc(var(--pad) * 1.2);
+  background: rgba(255,255,255,0.48);
+  border-bottom: 1px solid var(--card-border);
+  backdrop-filter: blur(8px) saturate(1.02);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: var(--soft-shadow);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal), var(--violet));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--card-border);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.38rem 0.6rem;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background .12s ease, color .12s ease, transform .12s ease;
+}
+.nav a:hover, .nav a:focus {
+  background: linear-gradient(90deg, rgba(14,165,164,0.06), rgba(124,58,237,0.03));
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1rem;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.hero-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(6px);
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+.hero p { color: var(--muted); margin: 0.5rem 0 0; }
+
+/* ---------- Buttons (refreshed) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(90deg, var(--pink), var(--violet));
+  transition: transform .14s ease, box-shadow .14s ease, filter .12s ease;
+  box-shadow: 0 12px 36px rgba(124,58,237,0.08);
+}
+.btn:hover { transform: translateY(-3px); filter: brightness(1.03); }
+
+.btn.secondary {
+  background: linear-gradient(90deg, var(--mint), var(--sky));
+  color: #052b2a;
+  box-shadow: 0 10px 28px rgba(14,165,164,0.06);
+}
+
+/* Ghost / outline */
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  box-shadow: none;
+}
+
+/* ---------- Card (site-wide) (glass) ---------- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Weekly Table ---------- */
+.table-wrap { overflow-x: auto; border-radius: 10px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: transparent;
+}
+caption { font-weight: 800; color: var(--text); text-align: left; margin-bottom: 0.4rem; }
+thead th {
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 800;
+  color: var(--text);
+  background: linear-gradient(90deg, rgba(14,165,164,0.04), rgba(124,58,237,0.03));
+  border-bottom: 1px solid rgba(15,23,42,0.02);
+}
+tbody td {
+  padding: 0.6rem;
+  border-top: 1px solid rgba(15,23,42,0.02);
+  vertical-align: middle;
+  color: var(--muted);
+}
+
+/* price tag (multicolor) */
+.price-tag {
+  display: inline-block;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: #0f172a;
+  background: linear-gradient(90deg, var(--sun), var(--coral));
+  box-shadow: 0 8px 20px rgba(255,209,102,0.06);
+}
+
+/* kcal badge */
+.kcal {
+  display: inline-block;
+  padding: 0.14rem 0.45rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.08), rgba(14,165,164,0.03));
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+/* ---------- Details & summary ---------- */
+details {
+  background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.6));
+  padding: 0.7rem;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(6px);
+}
+details summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* ---------- Dialog ---------- */
+dialog {
+  background: var(--surface);
+  color: var(--text);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  width: min(720px, 94%);
+  backdrop-filter: blur(8px);
+}
+dialog button {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--coral), var(--violet));
+  color: white;
+}
+
+/* ---------- Forms ---------- */
+label { display: block; color: var(--muted); font-weight: 700; margin-bottom: 0.25rem; }
+input[type="text"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.7);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--card-border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Utilities ---------- */
+.kicker { font-size: 0.9rem; color: var(--muted); }
+.small { font-size: 0.9rem; color: var(--muted); }
+.center { text-align: center; }
+.row { display: flex; gap: 0.9rem; align-items: flex-start; flex-wrap: wrap; }
+.col { flex: 1; min-width: 220px; }
+
+/* Focus accessibility */
+:focus { outline: 3px solid rgba(124,58,237,0.12); outline-offset: 3px; border-radius: 8px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; }
+  .nav { display: none; } /* replace with mobile nav if needed */
+}
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .brand h1 { font-size: 1rem; }
+  .btn { padding: 0.5rem 0.85rem; }
+  table { font-size: 0.9rem; }
+}
+
+/* ---------- Recipe Cards: grid + hover animation (kept + improved) ---------- */
+
+/* Grid wrapper */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+  align-items: start;
+}
+
+/* Card base (glassified) */
+.recipe-card {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--soft-shadow);
+  transform: translateZ(0);
+  transition:
+    transform 260ms cubic-bezier(.2,.9,.2,1),
+    box-shadow 260ms cubic-bezier(.2,.9,.2,1),
+    filter 260ms ease,
+    background 260ms ease;
+  will-change: transform, box-shadow;
+  backdrop-filter: blur(6px);
+}
+
+/* Card image (top) */
+.recipe-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(15,23,42,0.02);
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Card content */
+.recipe-card .card-content {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1 1 auto;
+}
+
+.recipe-card h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.03rem;
+  line-height: 1.15;
+}
+
+.recipe-card .meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+/* Card actions (View button) — initially hidden, revealed on hover */
+.recipe-card .card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0 0.85rem 0.9rem 0.85rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Hover / focus animation: lift + scale + shine */
+.recipe-card:hover,
+.recipe-card:focus-within {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 28px 60px rgba(15,23,42,0.16);
+  filter: brightness(1.02);
+  border-color: rgba(124,58,237,0.12);
+}
+
+.recipe-card:hover img,
+.recipe-card:focus-within img {
+  transform: scale(1.04);
+}
+
+/* Reveal actions when hovered/focused */
+.recipe-card:hover .card-actions,
+.recipe-card:focus-within .card-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight colorful accent bar at top on hover for personality */
+.recipe-card::before {
+  content: "";
+  height: 6px;
+  width: 100%;
+  display: block;
+  background: linear-gradient(90deg, var(--teal), var(--coral), var(--violet));
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1);
+}
+.recipe-card:hover::before,
+.recipe-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+/* Button inside card (small) */
+.recipe-card .btn.small {
+  font-size: 0.82rem;
+  padding: 0.38rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* Improve keyboard accessibility: visible focus outline */
+.recipe-card .btn.small:focus {
+  outline: 3px solid rgba(124,58,237,0.14);
+  outline-offset: 3px;
+}
+
+/* Make sure layout stays tidy on small screens */
+@media (max-width: 640px) {
+  .recipe-card img { height: 110px; }
+  .recipe-card { transform: none; } /* avoid heavy transforms on very small devices */
+  .recipe-card:hover::before { transform: scaleX(1); } /* keep accent */
+}
+
+/* ---------- recipe-box & team-card tweaks ---------- */
+.recipe-box {
+    background: var(--surface-solid);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 6px 18px rgba(11,18,32,0.06);
+    margin: 20px 0;
+}
+
+.team-card {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 0.85rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--soft-shadow);
+}
+
+/* small helpers */
+.muted { color: var(--muted); font-size: .95rem; }
+.hint { font-size: .9rem; color: var(--muted); margin-top: .4rem; }
+
+/* end of style.css (updated) */
